@@ -1,0 +1,3 @@
+export default {
+  UPDATE_SEARCH_QUERY: 'UPDATE_SEARCH_QUERY',
+};

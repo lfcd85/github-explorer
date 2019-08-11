@@ -1,18 +1,26 @@
 import React from 'react';
-import TextField from '../atoms/TextField'
+import TextField from '../atoms/TextField';
 
-export interface SearchTextFieldState {
-  inputValue: string
+export interface SearchTextFieldProps {
+  dispatchUpdateSearchQuery?: any,
 }
 
-class SearchTextField extends React.Component<{}, SearchTextFieldState> {
+export interface SearchTextFieldState {
+  inputValue: string,
+}
+
+class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFieldState> {
   constructor(props: any) {
     super(props);
     this.state = { inputValue: '' };
   }
 
   onChange = (e: React.SyntheticEvent<HTMLInputElement>) => {
-    this.setState({ inputValue: e.currentTarget.value });
+    this.setState({ inputValue: e.currentTarget.value }, () => {
+      if (this.state.inputValue.length > 0) {
+        this.props.dispatchUpdateSearchQuery(this.state.inputValue);
+      }
+    });
   }
 
   render() {

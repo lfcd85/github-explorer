@@ -16,14 +16,15 @@ it('renders one TextField component', () => {
 });
 
 it('calls setState when input value is changed', () => {
-  const wrapper = shallow(<SearchTextField />);
+  const mockDispatcher = jest.fn();
+  const wrapper = shallow(
+    <SearchTextField dispatchUpdateSearchQuery={mockDispatcher} />
+   );
   const setStateSpy = jest.spyOn(wrapper, 'setState');
   const event = {
     currentTarget: { value: 'inputted value' },
   };
 
   wrapper.instance().onChange(event);
-  expect(setStateSpy).toHaveBeenCalledWith({
-    inputValue: 'inputted value',
-  });
+  expect(setStateSpy).toHaveBeenCalled();
 });

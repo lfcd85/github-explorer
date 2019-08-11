@@ -1,8 +1,8 @@
 import React from 'react';
 
-const RepositoryListItem: React.FC = () => {
+const RepositoryListItem: React.FC<{ repository: any }> = (props) => {
   return (
-    <div>This is RepositoryListItem.</div>
+    <div>{ props.repository.name }</div>
   );
 }
 
