@@ -42,3 +42,4 @@ const RepositoryList: React.FC<{ searchQuery?: string }> = (props) => {
 }
 
 export default RepositoryList;
+
