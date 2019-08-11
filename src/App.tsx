@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import SearchPage from './components/pages/SearchPage';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         >
           Learn React
         </a>
+        <SearchPage />
       </header>
     </div>
   );
