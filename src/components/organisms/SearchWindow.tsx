@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchTextField from '../atoms/SearchTextField'
+import SearchTextField from '../molecules/SearchTextField'
 
 const SearchWindow: React.FC = () => {
   return (
