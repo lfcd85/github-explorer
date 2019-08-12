@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchPageTemplate from '../templates/SearchPageTemplate'
+import SearchPageTemplate from '../templates/SearchPageTemplateContainer';
 
 const SearchPage: React.FC = () => {
   return (

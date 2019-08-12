@@ -4,6 +4,12 @@ import RepositoryDetails from './RepositoryDetails';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<RepositoryDetails />, div);
+  const mockRepositoryDetails = {
+    id: 'id',
+    nameWithOwner: 'nameWithOwner',
+    description: 'description',
+  };
+
+  ReactDOM.render(<RepositoryDetails repositoryDetails={mockRepositoryDetails} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

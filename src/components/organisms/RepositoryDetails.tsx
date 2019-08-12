@@ -1,10 +1,11 @@
 import React from 'react';
 
-const RepositoryDetails: React.FC<{ repositoryDetails?: any }> = (props) => {
+export interface RepositoryDetailsProps {
+  repositoryDetails: any,
+}
+
+const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
   const details = props.repositoryDetails;
-  if (!details || Object.keys(details).length === 0) {
-    return <></>;
-  }
 
   return (
     <div>
