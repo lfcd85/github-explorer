@@ -25,13 +25,11 @@ class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFi
 
   render() {
     return (
-      <form>
-        <TextField
-          value={this.state.inputValue}
-          onChange={this.onChange}
-          placeholder='This is SearchTextField.'
-        />
-      </form>
+      <TextField
+        value={this.state.inputValue}
+        onChange={this.onChange}
+        placeholder='This is SearchTextField.'
+      />
     );
   }
 }
