@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
-import RepositoryList from './RepositoryList';
+import SearchPageTemplate from './SearchPageTemplate';
 
 const mapStateToProps = (state: any) => ({
-  searchQuery: state.searchQuery,
   repositoryDetails: state.repositoryDetails,
 });
 
@@ -10,9 +9,9 @@ const mapDispatchToProps = () => {
   return Object.assign({});
 };
 
-const RepositoryListContainer = connect(
+const SearchPageTemplateContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(RepositoryList);
+)(SearchPageTemplate);
 
-export default RepositoryListContainer;
+export default SearchPageTemplateContainer;

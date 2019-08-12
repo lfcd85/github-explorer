@@ -1,8 +1,19 @@
 import React from 'react';
 
-const RepositoryListItem: React.FC<{ repository: any }> = (props) => {
+export interface RepositoryListItemProps {
+  repository: any,
+  dispatchShowRepositoryDetails?: any,
+}
+
+const RepositoryListItem: React.FC<RepositoryListItemProps> = (props) => {
+  const showDetails = () => {
+    props.dispatchShowRepositoryDetails(props.repository);
+  };
+
   return (
-    <div>{ props.repository.name }</div>
+    <div onClick={showDetails}>
+      { props.repository.nameWithOwner }
+    </div>
   );
 }
 
