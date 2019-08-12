@@ -12,8 +12,10 @@ const RepositoryList: React.FC<{ searchQuery?: string }> = (props) => {
         edges {
           node {
             ...on Repository {
-              name,
-              databaseId
+              id,
+              nameWithOwner,
+              description,
+              url
             }
           }
         }
@@ -33,7 +35,7 @@ const RepositoryList: React.FC<{ searchQuery?: string }> = (props) => {
     <>
       {repositories.map((repository: any) =>
         <RepositoryListItem
-          key={repository.databaseId}
+          key={repository.id}
           repository={repository}
         />
       )}
