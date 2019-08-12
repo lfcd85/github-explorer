@@ -11,7 +11,7 @@ const RepositoryListItem: React.FC<RepositoryListItemProps> = (props) => {
   };
 
   return (
-    <div onClick={showDetails} >
+    <div onClick={showDetails}>
       { props.repository.nameWithOwner }
     </div>
   );
