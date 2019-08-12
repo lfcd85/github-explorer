@@ -1,13 +1,14 @@
 import { connect } from 'react-redux';
 import RepositoryDetails from './RepositoryDetails';
+import { hideRepositoryDetails } from '../../actions';
 
 const mapStateToProps = (state: any) => ({
   repositoryDetails: state.repositoryDetails,
 });
 
-const mapDispatchToProps = () => {
-  return Object.assign({});
-};
+const mapDispatchToProps = (dispatch: any) => ({
+  dispatchHideRepositoryDetails: () => (dispatch(hideRepositoryDetails())),
+});
 
 const RepositoryDetailsContainer = connect(
   mapStateToProps,

@@ -9,3 +9,7 @@ export const showRepositoryDetails = (details: any) => ({
   type: actionTypes.SHOW_REPOSITORY_DETAILS,
   details
 });
+
+export const hideRepositoryDetails = () => ({
+  type: actionTypes.HIDE_REPOSITORY_DETAILS,
+});
