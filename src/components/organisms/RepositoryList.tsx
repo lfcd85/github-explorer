@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
-import RepositoryListItem from '../molecules/RepositoryListItem';
+import RepositoryListItem from '../molecules/RepositoryListItemContainer';
 
 const RepositoryList: React.FC<{ searchQuery?: string }> = (props) => {
   const [repositories, setRepositories] = useState([]);
