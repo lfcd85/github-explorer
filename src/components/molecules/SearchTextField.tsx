@@ -4,6 +4,7 @@ import './SearchTextField.scss';
 
 export interface SearchTextFieldProps {
   dispatchUpdateSearchQuery?: any,
+  dispatchHideRepositoryDetails?: any,
 }
 
 export interface SearchTextFieldState {
@@ -20,6 +21,7 @@ class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFi
     this.setState({ inputValue: e.currentTarget.value }, () => {
       if (this.state.inputValue.length > 0) {
         this.props.dispatchUpdateSearchQuery(this.state.inputValue);
+        this.props.dispatchHideRepositoryDetails();
       }
     });
   }
