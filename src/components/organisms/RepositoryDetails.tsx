@@ -1,4 +1,5 @@
 import React from 'react';
+import BackToListButton from '../molecules/BackToListButton';
 import './RepositoryDetails.scss';
 
 export interface RepositoryDetailsProps {
@@ -41,33 +42,36 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
   }
 
   return (
-    <div className='RepositoryDetails' onClick={hideDetails}>
-      <h3 className='RepositoryDetails__nameWithOwner'>{details.nameWithOwner}</h3>
-      {renderTags(details)}
-      <dl>
-        {details.description &&
-          <>
-            <dt className='RepositoryDetails__itemTitle'>Description</dt>
-            <dd className='RepositoryDetails__itemContent'>{details.description}</dd>
-          </>
-        }
+    <>
+      <div className='RepositoryDetails'>
+        <h3 className='RepositoryDetails__nameWithOwner'>{details.nameWithOwner}</h3>
+        {renderTags(details)}
+        <dl>
+          {details.description &&
+            <>
+              <dt className='RepositoryDetails__itemTitle'>Description</dt>
+              <dd className='RepositoryDetails__itemContent'>{details.description}</dd>
+            </>
+          }
 
-        <dt className='RepositoryDetails__itemTitle'>Forked Times</dt>
-        <dd className='RepositoryDetails__itemContent'>{details.forkCount}</dd>
+          <dt className='RepositoryDetails__itemTitle'>Forked Times</dt>
+          <dd className='RepositoryDetails__itemContent'>{details.forkCount}</dd>
 
-        <dt className='RepositoryDetails__itemTitle'>Created / Updated Date</dt>
-        <dd className='RepositoryDetails__itemContent'>
-          {extractDate(details.createdAt)} / {extractDate(details.updatedAt)}
-        </dd>
+          <dt className='RepositoryDetails__itemTitle'>Created / Updated Date</dt>
+          <dd className='RepositoryDetails__itemContent'>
+            {extractDate(details.createdAt)} / {extractDate(details.updatedAt)}
+          </dd>
 
-        <dt className='RepositoryDetails__itemTitle'>URL</dt>
-        <dd className='RepositoryDetails__url'>
-          <a href={details.url} target='_blank' rel='noopener noreferrer'>
-            {details.url}
-          </a>
-        </dd>
-      </dl>
-    </div>
+          <dt className='RepositoryDetails__itemTitle'>URL</dt>
+          <dd className='RepositoryDetails__url'>
+            <a href={details.url} target='_blank' rel='noopener noreferrer'>
+              {details.url}
+            </a>
+          </dd>
+        </dl>
+      </div>
+      <BackToListButton onClick={hideDetails} />
+    </>
   );
 }
 

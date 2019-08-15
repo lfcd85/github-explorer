@@ -15,6 +15,8 @@ code {
     monospace;
 }
 
+// Reset default styles
+
 *:focus {
   outline: none;
 }
@@ -27,4 +29,8 @@ a {
 h3, p, dl, dt, dd {
   margin: 0;
   padding: 0;
+}
+
+button {
+  border: none;
 }
