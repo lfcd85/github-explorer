@@ -15,8 +15,19 @@ const RepositoryList: React.FC<{ searchQuery?: string }> = (props) => {
             ...on Repository {
               id,
               nameWithOwner,
+              isArchived,
+              languages(first: 20) {
+                edges {
+                  node {
+                    name
+                  }
+                }
+              },
               description,
-              url
+              forkCount,
+              createdAt,
+              updatedAt,
+              url,
             }
           }
         }
