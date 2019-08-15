@@ -14,11 +14,11 @@ const RepositoryListItem: React.FC<RepositoryListItemProps> = (props) => {
   return (
     <div className='RepositoryListItem' onClick={showDetails}>
       <div className='RepositoryListItem__nameWithOwner'>
-        { props.repository.nameWithOwner }
+        {props.repository.nameWithOwner}
       </div>
       {props.repository.description &&
         <div className='RepositoryListItem__description'>
-          { props.repository.description }
+          {props.repository.description}
         </div>
       }
     </div>
