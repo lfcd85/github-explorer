@@ -1,4 +1,5 @@
 import React from 'react';
+import PageTitle from '../molecules/PageTitle';
 import SearchWindow from '../organisms/SearchWindow';
 import RepositoryList from '../organisms/RepositoryListContainer';
 import RepositoryDetails from '../organisms/RepositoryDetailsContainer';
@@ -9,6 +10,7 @@ const SearchPageTemplate: React.FC<{ repositoryDetails?: any }> = (props) => {
 
   return (
     <>
+      <PageTitle title='GitHub Explorer' />
       <SearchWindow />
       {isRepositorySelected ? <RepositoryDetails /> : <RepositoryList />}
     </>

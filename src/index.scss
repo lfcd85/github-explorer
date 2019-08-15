@@ -1,4 +1,5 @@
 @import './styles/colors.scss';
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 body {
   margin: 0;
@@ -26,7 +27,7 @@ a {
   text-decoration: none;
 }
 
-h3, p, dl, dt, dd {
+h1, h3, p, dl, dt, dd {
   margin: 0;
   padding: 0;
 }
