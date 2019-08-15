@@ -1,0 +1,59 @@
+.RepositoryDetails {
+  background: var(--appWhite);
+  box-shadow: 0 1px 6px 0 rgba(36, 36, 36, .36);
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 540px;
+  border-radius: 22px;
+  padding: 16px 16px 20px;
+
+  &__nameWithOwner {
+    color: var(--appBlack);
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__tagsWrapper {
+    padding: 4px 0 0;
+    margin: 0 -2px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__archivedTag,
+  &__languageTag {
+    font-size: 12px;
+    border-radius: 2px;
+    padding: 2px;
+    margin: 4px 2px 0;
+  }
+
+  &__archivedTag {
+    color: var(--appRed);
+    border: solid 1px var(--appRed);
+  }
+
+  &__languageTag {
+    color: var(--appBrown);
+    border: solid 1px var(--appBrown);
+  }
+
+  &__itemTitle {
+    color: var(--appMediumGray);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 20px;
+    padding: 16px 0 0;
+  }
+
+  &__itemContent {
+    color: var(--appBlack);
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__url {
+    font-size: 16px;
+  }
+}

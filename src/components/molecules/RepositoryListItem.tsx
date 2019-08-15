@@ -1,4 +1,5 @@
 import React from 'react';
+import './RepositoryListItem.scss';
 
 export interface RepositoryListItemProps {
   repository: any,
@@ -11,8 +12,15 @@ const RepositoryListItem: React.FC<RepositoryListItemProps> = (props) => {
   };
 
   return (
-    <div onClick={showDetails}>
-      { props.repository.nameWithOwner }
+    <div className='RepositoryListItem' onClick={showDetails}>
+      <div className='RepositoryListItem__nameWithOwner'>
+        {props.repository.nameWithOwner}
+      </div>
+      {props.repository.description &&
+        <div className='RepositoryListItem__description'>
+          {props.repository.description}
+        </div>
+      }
     </div>
   );
 }

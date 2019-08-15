@@ -1,8 +1,10 @@
 import React from 'react';
 import TextField from '../atoms/TextField';
+import './SearchTextField.scss';
 
 export interface SearchTextFieldProps {
   dispatchUpdateSearchQuery?: any,
+  dispatchHideRepositoryDetails?: any,
 }
 
 export interface SearchTextFieldState {
@@ -19,6 +21,7 @@ class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFi
     this.setState({ inputValue: e.currentTarget.value }, () => {
       if (this.state.inputValue.length > 0) {
         this.props.dispatchUpdateSearchQuery(this.state.inputValue);
+        this.props.dispatchHideRepositoryDetails();
       }
     });
   }
@@ -28,7 +31,8 @@ class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFi
       <TextField
         value={this.state.inputValue}
         onChange={this.onChange}
-        placeholder='This is SearchTextField.'
+        placeholder='Search repository name'
+        className='SearchTextField'
       />
     );
   }

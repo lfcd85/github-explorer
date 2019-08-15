@@ -18,7 +18,10 @@ it('renders one TextField component', () => {
 it('calls setState when input value is changed', () => {
   const mockDispatcher = jest.fn();
   const wrapper = shallow(
-    <SearchTextField dispatchUpdateSearchQuery={mockDispatcher} />
+    <SearchTextField
+      dispatchUpdateSearchQuery={mockDispatcher}
+      dispatchHideRepositoryDetails={mockDispatcher}
+    />
    );
   const setStateSpy = jest.spyOn(wrapper, 'setState');
   const event = {
