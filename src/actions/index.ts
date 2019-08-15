@@ -1,8 +1,13 @@
 import actionTypes from './actionTypes';
 
-export const updateSearchQuery = (value: any) => ({
+export const updateSearchQuery = (value: string) => ({
   type: actionTypes.UPDATE_SEARCH_QUERY,
   value
+});
+
+export const updatePagination = (paginatedQuery: any) => ({
+  type: actionTypes.UPDATE_PAGINATION,
+  paginatedQuery
 });
 
 export const showRepositoryDetails = (details: any) => ({
