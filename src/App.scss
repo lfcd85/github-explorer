@@ -1,11 +1,10 @@
 .App {
-  text-align: center;
   background-color: var(--appWhite);
+  color: var(--appBlack);
   min-height: 100vh;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: var(--appBlack);
+  justify-content: flex-start;
 }

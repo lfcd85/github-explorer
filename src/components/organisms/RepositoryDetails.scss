@@ -1,0 +1,27 @@
+.RepositoryDetails {
+  background: var(--appWhite);
+  box-shadow: 0 1px 6px 0 rgba(36, 36, 36, .36);
+  box-sizing: border-box;
+  max-width: 100%;
+  width: 540px;
+  border-radius: 22px;
+  padding: 16px;
+
+  &__nameWithOwner {
+    color: var(--appBlack);
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__description {
+    color: var(--appGray);
+    font-size: 14px;
+    line-height: 20px;
+    padding: 12px 0 0;
+  }
+
+  &__url {
+    font-size: 16px;
+    padding: 16px 0 0;
+  }
+}

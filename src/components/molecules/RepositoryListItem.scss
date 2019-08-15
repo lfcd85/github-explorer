@@ -1,0 +1,35 @@
+.RepositoryListItem {
+  box-sizing: border-box;
+  border-bottom: solid 1px var(--appLightGray);
+  padding: 12px 16px;
+
+  &:hover {
+    background-color: var(--appFaintGray);
+    cursor: pointer;
+  }
+
+  &:first-child {
+    padding: 16px 16px 12px;
+    border-radius: 22px 22px 0 0;
+  }
+
+  &:last-child {
+    padding: 12px 16px 16px;
+    border-radius: 0 0 22px 22px;
+  }
+
+  &__nameWithOwner {
+    color: var(--appBlack);
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__description {
+    color: var(--appGray);
+    font-size: 14px;
+    padding: 12px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

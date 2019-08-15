@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import RepositoryListItem from '../molecules/RepositoryListItemContainer';
+import './RepositoryList.scss';
 
 const RepositoryList: React.FC<{ searchQuery?: string }> = (props) => {
   const [repositories, setRepositories] = useState([]);
@@ -32,14 +33,14 @@ const RepositoryList: React.FC<{ searchQuery?: string }> = (props) => {
   }, [searchRepository]);
 
   return (
-    <>
+    <div className='RepositoryList'>
       {repositories.map((repository: any) =>
         <RepositoryListItem
           key={repository.id}
           repository={repository}
         />
       )}
-    </>
+    </div>
   );
 }
 
