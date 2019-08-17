@@ -3,8 +3,9 @@ import PageTitle from '../molecules/PageTitle';
 import SearchWindow from '../organisms/SearchWindow';
 import RepositoryList from '../organisms/RepositoryListContainer';
 import RepositoryDetails from '../organisms/RepositoryDetailsContainer';
+import { SearchRepositoryResult } from '../../graphql/querySearchRepository';
 
-const SearchPage: React.FC<{ repositoryDetails?: any }> = (props) => {
+const SearchPage: React.FC<{ repositoryDetails?: SearchRepositoryResult | {} }> = (props) => {
   const details = props.repositoryDetails;
   const isRepositorySelected = details && Object.keys(details).length > 0;
 

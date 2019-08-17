@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, MouseEvent } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import PaginationButton from '../molecules/PaginationButton';
 import RepositoryListItem from '../molecules/RepositoryListItemContainer';
 import { repositoriesPerPage } from '../../constants/SearchPage';
-import querySearchRepository from '../../graphql/querySearchRepository';
+import {
+  querySearchRepository,
+  SearchRepositoryEdge,
+  SearchRepositoryResult,
+} from '../../graphql/querySearchRepository';
 import './RepositoryList.scss';
 
-export interface RepositoryListProps {
-  searchQuery?: any,
-  dispatchUpdatePagination?: any,
+// NOTE: sets `any` types to avoid the issue below about HOCs
+// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31363
+interface RepositoryListProps {
+  searchQuery?: any;
+  dispatchUpdatePagination?: any;
 }
 
 const RepositoryList: React.FC<RepositoryListProps> = (props) => {
@@ -26,22 +32,22 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
   useEffect(() => {
     const { called, loading, data } = searchRepository;
     if (called && !loading && data) {
-      setRepositories(data.search.edges.map((item: any) => item.node));
+      setRepositories(data.search.edges.map((edge: SearchRepositoryEdge) => edge.node));
       setPagination(data.search.pageInfo);
     }
   }, [searchRepository]);
 
-  const updatePagination = (e: any, isNext: boolean) => {
+  const updatePagination = (e: MouseEvent, isNext: boolean) => {
     const { query } = props.searchQuery;
     const { endCursor, startCursor } = searchRepository.data.search.pageInfo;
 
-    if (isNext) {
+    if (isNext && props.dispatchUpdatePagination) {
       props.dispatchUpdatePagination({
         query,
         first: repositoriesPerPage,
         after: endCursor,
       });
-    } else {
+    } else if (props.dispatchUpdatePagination) {
       props.dispatchUpdatePagination({
         query,
         last: repositoriesPerPage,
@@ -53,7 +59,7 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
   return (
     <>
       <div className='RepositoryList'>
-        {repositories.map((repository: any) =>
+        {repositories.map((repository: SearchRepositoryResult) =>
           <RepositoryListItem
             key={repository.id}
             repository={repository}
@@ -65,12 +71,12 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
           <PaginationButton
             isNext={false}
             disabled={!pagination.hasPreviousPage}
-            onClick={(e: any) => updatePagination(e, false)}
+            onClick={(e: MouseEvent) => updatePagination(e, false)}
           />
           <PaginationButton
             isNext
             disabled={!pagination.hasNextPage}
-            onClick={(e: any) => updatePagination(e, true)}
+            onClick={(e: MouseEvent) => updatePagination(e, true)}
           />
         </div>
       }

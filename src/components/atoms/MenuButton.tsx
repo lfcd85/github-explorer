@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 
-export interface MenuButtonProps {
-  className?: string,
-  label?: string,
-  onClick?: any,
-  disabled?: boolean,
+interface MenuButtonProps {
+  className?: string;
+  label?: string;
+  onClick?: (e: MouseEvent) => void;
+  disabled?: boolean;
 }
 
 const MenuButton: React.FC<MenuButtonProps> = (props) => {

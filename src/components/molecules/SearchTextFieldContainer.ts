@@ -1,3 +1,4 @@
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import SearchTextField from './SearchTextField';
 import {
@@ -9,9 +10,9 @@ function mapStateToProps() {
   return Object.assign({});
 }
 
-const mapDispatchToProps = (dispatch: any) => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   dispatchUpdateSearchQuery: (value: string) => (dispatch(updateSearchQuery(value))),
-  dispatchHideRepositoryDetails: (value: string) => (dispatch(hideRepositoryDetails())),
+  dispatchHideRepositoryDetails: () => (dispatch(hideRepositoryDetails())),
 });
 
 const SearchTextFieldContainer = connect(

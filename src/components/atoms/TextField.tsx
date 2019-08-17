@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 
-export interface TextFieldProps {
-  value?: string,
-  onChange?: any,
-  placeholder?: string,
-  className?: string,
+interface TextFieldProps {
+  value?: string;
+  onChange?: (e: SyntheticEvent<HTMLInputElement>) => void;
+  placeholder?: string;
+  className?: string;
 }
 
 const TextField: React.FC<TextFieldProps> = (props) => {

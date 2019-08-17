@@ -1,22 +1,30 @@
 import React from 'react';
 import BackToListButton from '../molecules/BackToListButton';
+import {
+  Language,
+  SearchRepositoryResult,
+} from '../../graphql/querySearchRepository';
 import './RepositoryDetails.scss';
 
-export interface RepositoryDetailsProps {
-  repositoryDetails: any,
-  dispatchHideRepositoryDetails?: any,
+// NOTE: sets `any` types to avoid the issue below about HOCs
+// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31363
+interface RepositoryDetailsProps {
+  repositoryDetails: any;
+  dispatchHideRepositoryDetails?: any;
 }
 
 const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
   const details = props.repositoryDetails;
 
   const hideDetails = () => {
-    props.dispatchHideRepositoryDetails();
+    if (props.dispatchHideRepositoryDetails) {
+      props.dispatchHideRepositoryDetails();
+    }
   }
 
   const extractDate = (dateTime: string) => new Date(dateTime).toDateString();
 
-  const renderTags = (details: any) => {
+  const renderTags = (details: SearchRepositoryResult) => {
     let tags = [];
 
     if (details.isArchived) {
@@ -27,12 +35,14 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
       );
     }
 
-    const langNames = details.languages.edges.map((language: any) => language.node.name);
-    Array.prototype.push.apply(tags, langNames.map((langName: string) => (
-      <span className='RepositoryDetails__languageTag' key={langName}>
-        {langName}
-      </span>
-    )));
+    if (details.languages) {
+      const langNames = details.languages.edges.map((language: Language) => language.node.name);
+      Array.prototype.push.apply(tags, langNames.map((langName: string) => (
+        <span className='RepositoryDetails__languageTag' key={langName}>
+          {langName}
+        </span>
+      )));
+    }
 
     return (tags.length === 0) ? '' : (
       <div className='RepositoryDetails__tagsWrapper'>

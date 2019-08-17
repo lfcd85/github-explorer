@@ -1,6 +1,38 @@
 import gql from 'graphql-tag';
 
-const querySearchRepository = gql`
+export interface SearchRepositoryParams {
+  query?: string;
+  first?: number;
+  after?: string;
+  last?: number;
+  before?: string;
+}
+
+export interface Language {
+  node: {
+    name: string;
+  };
+}
+
+export interface SearchRepositoryResult {
+  id: string;
+  nameWithOwner: string;
+  isArchived: boolean;
+  languages?: {
+    edges: Language[];
+  }
+  description?: string;
+  forkCount: number;
+  createdAt: string;
+  updatedAt: string;
+  url: string;
+}
+
+export interface SearchRepositoryEdge {
+  node: SearchRepositoryResult;
+}
+
+export const querySearchRepository = gql`
   query SearchRepository(
     $query: String!,
     $first: Int,
@@ -46,5 +78,3 @@ const querySearchRepository = gql`
     }
   }
 `;
-
-export default querySearchRepository;
