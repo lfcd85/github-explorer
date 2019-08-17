@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import TextField from '../atoms/TextField';
 import './SearchTextField.scss';
 
@@ -17,7 +17,7 @@ class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFi
     this.state = { inputValue: '' };
   }
 
-  onChange = (e: React.SyntheticEvent<HTMLInputElement>) => {
+  onChange = (e: SyntheticEvent<HTMLInputElement>) => {
     this.setState({ inputValue: e.currentTarget.value }, () => {
       if (this.state.inputValue.length > 0) {
         this.props.dispatchUpdateSearchQuery(this.state.inputValue);

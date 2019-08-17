@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 
 export interface TextFieldProps {
   value?: string;
-  onChange?: any;
+  onChange?: (e: SyntheticEvent<HTMLInputElement>) => void;
   placeholder?: string;
   className?: string;
 }
