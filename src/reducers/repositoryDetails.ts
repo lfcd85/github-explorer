@@ -8,7 +8,7 @@ interface RepositoryDetailsAction {
 
 const repositoryDetails = (
   details: SearchRepositoryResult | {} = {},
-  action: RepositoryDetailsAction
+  action: RepositoryDetailsAction,
 ) => {
   switch (action.type) {
     case actionTypes.SHOW_REPOSITORY_DETAILS:

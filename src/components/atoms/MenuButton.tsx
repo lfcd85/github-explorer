@@ -7,10 +7,8 @@ interface MenuButtonProps {
   disabled?: boolean;
 }
 
-const MenuButton: React.FC<MenuButtonProps> = (props) => {
-  return (
-    <button {...props}>{props.label}</button>
-  );
-}
+const MenuButton: React.FC<MenuButtonProps> = props => (
+  <button type="button" {...props}>{props.label}</button>
+);
 
 export default MenuButton;

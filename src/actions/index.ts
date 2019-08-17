@@ -6,17 +6,17 @@ import {
 
 export const updateSearchQuery = (value: string) => ({
   type: actionTypes.UPDATE_SEARCH_QUERY,
-  value
+  value,
 });
 
 export const updatePagination = (paginatedQuery: SearchRepositoryParams) => ({
   type: actionTypes.UPDATE_PAGINATION,
-  paginatedQuery
+  paginatedQuery,
 });
 
 export const showRepositoryDetails = (details: SearchRepositoryResult) => ({
   type: actionTypes.SHOW_REPOSITORY_DETAILS,
-  details
+  details,
 });
 
 export const hideRepositoryDetails = () => ({

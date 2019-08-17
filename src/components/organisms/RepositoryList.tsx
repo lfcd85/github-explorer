@@ -3,8 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 import PaginationButton from '../molecules/PaginationButton';
 import RepositoryListItem from '../molecules/RepositoryListItemContainer';
 import { repositoriesPerPage } from '../../constants/SearchPage';
-import {
-  querySearchRepository,
+import querySearchRepository, {
   SearchRepositoryEdge,
   SearchRepositoryResult,
 } from '../../graphql/querySearchRepository';
@@ -13,11 +12,11 @@ import './RepositoryList.scss';
 // NOTE: sets `any` types to avoid the issue below about HOCs
 // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31363
 interface RepositoryListProps {
-  searchQuery?: any;
-  dispatchUpdatePagination?: any;
+  searchQuery?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  dispatchUpdatePagination?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
-const RepositoryList: React.FC<RepositoryListProps> = (props) => {
+const RepositoryList: React.FC<RepositoryListProps> = props => {
   const [repositories, setRepositories] = useState([]);
   const [pagination, setPagination] = useState({
     hasPreviousPage: false,
@@ -26,7 +25,7 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
 
   const searchRepository = useQuery(
     querySearchRepository,
-    { variables: props.searchQuery }
+    { variables: props.searchQuery },
   );
 
   useEffect(() => {
@@ -54,20 +53,21 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
         before: startCursor,
       });
     }
-  }
+  };
 
   return (
     <>
-      <div className='RepositoryList'>
-        {repositories.map((repository: SearchRepositoryResult) =>
+      <div className="RepositoryList">
+        {repositories.map((repository: SearchRepositoryResult, index: number) => (
           <RepositoryListItem
             key={repository.id}
             repository={repository}
+            tabIndex={index + 1}
           />
-        )}
+        ))}
       </div>
-      {repositories.length > 0 &&
-        <div className='RepositoryList__paginationButtonsWrapper'>
+      {repositories.length > 0 && (
+        <div className="RepositoryList__paginationButtonsWrapper">
           <PaginationButton
             isNext={false}
             disabled={!pagination.hasPreviousPage}
@@ -79,9 +79,9 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
             onClick={(e: MouseEvent) => updatePagination(e, true)}
           />
         </div>
-      }
+      )}
     </>
   );
-}
+};
 
 export default RepositoryList;

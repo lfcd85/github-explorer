@@ -6,16 +6,14 @@ import SearchPage from './pages/SearchPageContainer';
 import client from '../graphql/apolloClient';
 import store from '../store';
 
-const App: React.FC = () => {
-  return (
-    <Provider store={store}>
-      <ApolloProvider client={client}>
-        <div className="App">
-          <SearchPage />
-        </div>
-       </ApolloProvider>
-    </Provider>
-  );
-}
+const App: React.FC = () => (
+  <Provider store={store}>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <SearchPage />
+      </div>
+    </ApolloProvider>
+  </Provider>
+);
 
 export default App;

@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 
 const SearchTextFieldContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(SearchTextField);
 
 export default SearchTextFieldContainer;

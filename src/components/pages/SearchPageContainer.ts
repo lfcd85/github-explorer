@@ -6,13 +6,11 @@ const mapStateToProps = (state: AllState) => ({
   repositoryDetails: state.repositoryDetails,
 });
 
-const mapDispatchToProps = () => {
-  return Object.assign({});
-};
+const mapDispatchToProps = () => Object.assign({});
 
 const SearchPageContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(SearchPage);
 
 export default SearchPageContainer;

@@ -20,7 +20,7 @@ export interface SearchRepositoryResult {
   isArchived: boolean;
   languages?: {
     edges: Language[];
-  }
+  };
   description?: string;
   forkCount: number;
   createdAt: string;
@@ -32,7 +32,7 @@ export interface SearchRepositoryEdge {
   node: SearchRepositoryResult;
 }
 
-export const querySearchRepository = gql`
+const querySearchRepository = gql`
   query SearchRepository(
     $query: String!,
     $first: Int,
@@ -78,3 +78,5 @@ export const querySearchRepository = gql`
     }
   }
 `;
+
+export default querySearchRepository;

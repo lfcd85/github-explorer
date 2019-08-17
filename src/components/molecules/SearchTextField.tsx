@@ -9,16 +9,16 @@ interface SearchTextFieldProps {
 }
 
 interface SearchTextFieldState {
-  inputValue: string,
+  inputValue: string;
 }
 
 class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFieldState> {
-  constructor(props: SearchTextFieldProps) {
+  public constructor(props: SearchTextFieldProps) {
     super(props);
     this.state = { inputValue: '' };
   }
 
-  onChange = (e: SyntheticEvent<HTMLInputElement>) => {
+  private onChange = (e: SyntheticEvent<HTMLInputElement>) => {
     this.setState({ inputValue: e.currentTarget.value }, () => {
       if (this.state.inputValue.length > 0 && this.props.dispatchUpdateSearchQuery) {
         this.props.dispatchUpdateSearchQuery(this.state.inputValue);
@@ -27,15 +27,15 @@ class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFi
         this.props.dispatchHideRepositoryDetails();
       }
     });
-  }
+  };
 
-  render() {
+  public render() {
     return (
       <TextField
         value={this.state.inputValue}
         onChange={this.onChange}
-        placeholder='Search repository name'
-        className='SearchTextField'
+        placeholder="Search repository name"
+        className="SearchTextField"
       />
     );
   }

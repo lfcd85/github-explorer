@@ -8,15 +8,13 @@ interface PaginationButtonProps {
   disabled: boolean;
 }
 
-const PaginationButton: React.FC<PaginationButtonProps> = (props) => {
-  return (
-    <MenuButton
-      className='PaginationButton'
-      onClick={props.onClick}
-      disabled={props.disabled}
-      label={props.isNext ? '>' : '<'}
-    />
-  );
-}
+const PaginationButton: React.FC<PaginationButtonProps> = props => (
+  <MenuButton
+    className="PaginationButton"
+    onClick={props.onClick}
+    disabled={props.disabled}
+    label={props.isNext ? '>' : '<'}
+  />
+);
 
 export default PaginationButton;
