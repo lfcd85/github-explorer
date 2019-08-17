@@ -58,10 +58,11 @@ const RepositoryList: React.FC<RepositoryListProps> = props => {
   return (
     <>
       <div className="RepositoryList">
-        {repositories.map((repository: SearchRepositoryResult) => (
+        {repositories.map((repository: SearchRepositoryResult, index: number) => (
           <RepositoryListItem
             key={repository.id}
             repository={repository}
+            tabIndex={index + 1}
           />
         ))}
       </div>

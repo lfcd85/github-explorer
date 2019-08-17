@@ -6,6 +6,7 @@ import './RepositoryListItem.scss';
 interface RepositoryListItemProps {
   repository: SearchRepositoryResult;
   dispatchShowRepositoryDetails?: (details: SearchRepositoryResult) => Dispatch;
+  tabIndex: number;
 }
 
 const RepositoryListItem: React.FC<RepositoryListItemProps> = props => {
@@ -16,7 +17,13 @@ const RepositoryListItem: React.FC<RepositoryListItemProps> = props => {
   };
 
   return (
-    <div className="RepositoryListItem" onClick={showDetails}>
+    <div
+      className="RepositoryListItem"
+      onClick={showDetails}
+      onKeyPress={showDetails}
+      role="link"
+      tabIndex={props.tabIndex}
+    >
       <div className="RepositoryListItem__nameWithOwner">
         {props.repository.nameWithOwner}
       </div>
