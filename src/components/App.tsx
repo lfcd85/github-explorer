@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { ApolloProvider } from '@apollo/react-hooks';
 import './App.scss';
-import SearchPage from './pages/SearchPage';
+import SearchPage from './pages/SearchPageContainer';
 import client from '../graphql/apolloClient';
 import store from '../store';
 
