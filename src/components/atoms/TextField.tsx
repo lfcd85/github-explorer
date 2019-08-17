@@ -7,10 +7,8 @@ interface TextFieldProps {
   className?: string;
 }
 
-const TextField: React.FC<TextFieldProps> = (props) => {
-  return (
-    <input type='text' {...props} />
-  );
-};
+const TextField: React.FC<TextFieldProps> = props => (
+  <input type="text" {...props} />
+);
 
 export default TextField;

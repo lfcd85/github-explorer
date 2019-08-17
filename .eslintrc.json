@@ -7,7 +7,10 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
+    "no-shadow": "off",
     "semi": ["error", "always"],
+    "react/destructuring-assignment": "off",
+    "react/jsx-one-expression-per-line": "off",
     "react/prop-types": "off",
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/explicit-function-return-type": "off"

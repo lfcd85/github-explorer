@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 
 const RepositoryDetailsContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(RepositoryDetails);
 
 export default RepositoryDetailsContainer;

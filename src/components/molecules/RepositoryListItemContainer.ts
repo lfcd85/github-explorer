@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 
 const RepositoryListItemContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(RepositoryListItem);
 
 export default RepositoryListItemContainer;

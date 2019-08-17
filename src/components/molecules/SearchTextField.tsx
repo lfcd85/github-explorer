@@ -27,15 +27,15 @@ class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFi
         this.props.dispatchHideRepositoryDetails();
       }
     });
-  }
+  };
 
   public render() {
     return (
       <TextField
         value={this.state.inputValue}
         onChange={this.onChange}
-        placeholder='Search repository name'
-        className='SearchTextField'
+        placeholder="Search repository name"
+        className="SearchTextField"
       />
     );
   }

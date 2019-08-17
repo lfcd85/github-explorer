@@ -3,8 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 import PaginationButton from '../molecules/PaginationButton';
 import RepositoryListItem from '../molecules/RepositoryListItemContainer';
 import { repositoriesPerPage } from '../../constants/SearchPage';
-import {
-  querySearchRepository,
+import querySearchRepository, {
   SearchRepositoryEdge,
   SearchRepositoryResult,
 } from '../../graphql/querySearchRepository';
@@ -17,7 +16,7 @@ interface RepositoryListProps {
   dispatchUpdatePagination?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
-const RepositoryList: React.FC<RepositoryListProps> = (props) => {
+const RepositoryList: React.FC<RepositoryListProps> = props => {
   const [repositories, setRepositories] = useState([]);
   const [pagination, setPagination] = useState({
     hasPreviousPage: false,
@@ -26,7 +25,7 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
 
   const searchRepository = useQuery(
     querySearchRepository,
-    { variables: props.searchQuery }
+    { variables: props.searchQuery },
   );
 
   useEffect(() => {
@@ -58,16 +57,16 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
 
   return (
     <>
-      <div className='RepositoryList'>
-        {repositories.map((repository: SearchRepositoryResult) =>
+      <div className="RepositoryList">
+        {repositories.map((repository: SearchRepositoryResult) => (
           <RepositoryListItem
             key={repository.id}
             repository={repository}
           />
-        )}
+        ))}
       </div>
-      {repositories.length > 0 &&
-        <div className='RepositoryList__paginationButtonsWrapper'>
+      {repositories.length > 0 && (
+        <div className="RepositoryList__paginationButtonsWrapper">
           <PaginationButton
             isNext={false}
             disabled={!pagination.hasPreviousPage}
@@ -79,7 +78,7 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
             onClick={(e: MouseEvent) => updatePagination(e, true)}
           />
         </div>
-      }
+      )}
     </>
   );
 };

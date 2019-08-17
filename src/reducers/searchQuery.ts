@@ -15,7 +15,7 @@ interface SearchQueryAction {
 
 const searchQuery = (
   state: SearchRepositoryParams = defaultState,
-  action: SearchQueryAction
+  action: SearchQueryAction,
 ) => {
   switch (action.type) {
     case actionTypes.UPDATE_SEARCH_QUERY:

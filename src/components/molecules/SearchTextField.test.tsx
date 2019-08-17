@@ -21,7 +21,7 @@ it('calls setState when input value is changed', () => {
     <SearchTextField
       dispatchUpdateSearchQuery={mockDispatcher}
       dispatchHideRepositoryDetails={mockDispatcher}
-    />
+    />,
   );
   const setStateSpy = jest.spyOn(wrapper, 'setState');
   const event = {
