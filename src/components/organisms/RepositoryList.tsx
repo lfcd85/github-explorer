@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/react-hooks';
-import gql from 'graphql-tag';
 import PaginationButton from '../molecules/PaginationButton';
 import RepositoryListItem from '../molecules/RepositoryListItemContainer';
 import { repositoriesPerPage } from '../../constants/SearchPage';
+import querySearchRepository from '../../graphql/querySearchRepository';
 import './RepositoryList.scss';
 
 export interface RepositoryListProps {
@@ -18,52 +18,9 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
     hasNextPage: false,
   });
 
-  const searchRepository = useQuery(gql`
-    query SearchRepository(
-      $query: String!,
-      $first: Int,
-      $after: String,
-      $last: Int,
-      $before: String
-    ) { 
-      search(
-        query: $query,
-        type: REPOSITORY,
-        first: $first,
-        after: $after,
-        last: $last,
-        before: $before
-      ) {
-        edges {
-          node {
-            ...on Repository {
-              id,
-              nameWithOwner,
-              isArchived,
-              languages(first: 20) {
-                edges {
-                  node {
-                    name
-                  }
-                }
-              },
-              description,
-              forkCount,
-              createdAt,
-              updatedAt,
-              url,
-            }
-          }
-        },
-        pageInfo {
-          startCursor,
-          endCursor,
-          hasPreviousPage,
-          hasNextPage,
-        }
-      }
-    }`,
-    { variables: props.searchQuery },
+  const searchRepository = useQuery(
+    querySearchRepository,
+    { variables: props.searchQuery }
   );
 
   useEffect(() => {
