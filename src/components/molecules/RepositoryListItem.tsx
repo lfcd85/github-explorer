@@ -1,14 +1,18 @@
 import React from 'react';
+import { Dispatch } from 'redux';
+import { querySearchRepositoryResult } from '../../graphql/querySearchRepository';
 import './RepositoryListItem.scss';
 
 export interface RepositoryListItemProps {
   repository: any;
-  dispatchShowRepositoryDetails?: any;
+  dispatchShowRepositoryDetails?: (details: querySearchRepositoryResult) => Dispatch;
 }
 
 const RepositoryListItem: React.FC<RepositoryListItemProps> = (props) => {
   const showDetails = () => {
-    props.dispatchShowRepositoryDetails(props.repository);
+    if (props.dispatchShowRepositoryDetails) {
+      props.dispatchShowRepositoryDetails(props.repository);
+    }
   };
 
   return (

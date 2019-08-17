@@ -12,7 +12,7 @@ function mapStateToProps() {
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   dispatchUpdateSearchQuery: (value: string) => (dispatch(updateSearchQuery(value))),
-  dispatchHideRepositoryDetails: (value: string) => (dispatch(hideRepositoryDetails())),
+  dispatchHideRepositoryDetails: () => (dispatch(hideRepositoryDetails())),
 });
 
 const SearchTextFieldContainer = connect(
