@@ -8,17 +8,19 @@ export interface querySearchRepositoryParams {
   before?: string;
 }
 
+export interface queryLanguage {
+  node: {
+    name: string;
+  };
+}
+
 export interface querySearchRepositoryResult {
   id: string;
   nameWithOwner: string;
   isArchived: boolean;
   languages?: {
-    edges: Array<{
-      node: {
-        name: string;
-      }
-    }>
-  };
+    edges: queryLanguage[];
+  }
   description?: string;
   forkCount: number;
   createdAt: string;

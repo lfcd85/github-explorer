@@ -1,5 +1,8 @@
 import React from 'react';
 import BackToListButton from '../molecules/BackToListButton';
+import {
+  queryLanguage,
+} from '../../graphql/querySearchRepository';
 import './RepositoryDetails.scss';
 
 export interface RepositoryDetailsProps {
@@ -28,7 +31,7 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
     }
 
     if (details.languages) {
-      const langNames = details.languages.edges.map((language: any) => language.node.name);
+      const langNames = details.languages.edges.map((language: queryLanguage) => language.node.name);
       Array.prototype.push.apply(tags, langNames.map((langName: string) => (
         <span className='RepositoryDetails__languageTag' key={langName}>
           {langName}
