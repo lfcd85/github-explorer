@@ -7,7 +7,7 @@ const defaultState = {
   first: repositoriesPerPage,
 };
 
-interface searchQueryAction {
+interface SearchQueryAction {
   type: string;
   value?: string;
   paginatedQuery?: SearchRepositoryParams;
@@ -15,7 +15,7 @@ interface searchQueryAction {
 
 const searchQuery = (
   state: SearchRepositoryParams = defaultState,
-  action: searchQueryAction
+  action: SearchQueryAction
 ) => {
   switch (action.type) {
     case actionTypes.UPDATE_SEARCH_QUERY:
