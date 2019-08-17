@@ -1,10 +1,10 @@
 import React from 'react';
 
 export interface TextFieldProps {
-  value?: string,
-  onChange?: any,
-  placeholder?: string,
-  className?: string,
+  value?: string;
+  onChange?: any;
+  placeholder?: string;
+  className?: string;
 }
 
 const TextField: React.FC<TextFieldProps> = (props) => {

@@ -2,8 +2,8 @@ import React from 'react';
 import './RepositoryListItem.scss';
 
 export interface RepositoryListItemProps {
-  repository: any,
-  dispatchShowRepositoryDetails?: any,
+  repository: any;
+  dispatchShowRepositoryDetails?: any;
 }
 
 const RepositoryListItem: React.FC<RepositoryListItemProps> = (props) => {

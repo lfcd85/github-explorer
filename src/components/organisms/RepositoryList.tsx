@@ -7,8 +7,8 @@ import querySearchRepository from '../../graphql/querySearchRepository';
 import './RepositoryList.scss';
 
 export interface RepositoryListProps {
-  searchQuery?: any,
-  dispatchUpdatePagination?: any,
+  searchQuery?: any;
+  dispatchUpdatePagination?: any;
 }
 
 const RepositoryList: React.FC<RepositoryListProps> = (props) => {

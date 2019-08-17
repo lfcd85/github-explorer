@@ -3,8 +3,8 @@ import BackToListButton from '../molecules/BackToListButton';
 import './RepositoryDetails.scss';
 
 export interface RepositoryDetailsProps {
-  repositoryDetails: any,
-  dispatchHideRepositoryDetails?: any,
+  repositoryDetails: any;
+  dispatchHideRepositoryDetails?: any;
 }
 
 const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {

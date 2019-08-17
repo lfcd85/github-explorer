@@ -3,9 +3,9 @@ import MenuButton from '../atoms/MenuButton';
 import './PaginationButton.scss';
 
 export interface PaginationButtonProps {
-  onClick?: any,
-  isNext: boolean,
-  disabled: boolean,
+  onClick?: any;
+  isNext: boolean;
+  disabled: boolean;
 }
 
 const PaginationButton: React.FC<PaginationButtonProps> = (props) => {

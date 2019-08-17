@@ -3,8 +3,8 @@ import TextField from '../atoms/TextField';
 import './SearchTextField.scss';
 
 export interface SearchTextFieldProps {
-  dispatchUpdateSearchQuery?: any,
-  dispatchHideRepositoryDetails?: any,
+  dispatchUpdateSearchQuery?: any;
+  dispatchHideRepositoryDetails?: any;
 }
 
 export interface SearchTextFieldState {
