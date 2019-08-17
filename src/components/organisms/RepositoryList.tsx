@@ -10,7 +10,7 @@ import {
 } from '../../graphql/querySearchRepository';
 import './RepositoryList.scss';
 
-export interface RepositoryListProps {
+interface RepositoryListProps {
   searchQuery?: any;
   dispatchUpdatePagination?: any;
 }

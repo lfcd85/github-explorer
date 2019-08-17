@@ -6,7 +6,7 @@ import {
 } from '../../graphql/querySearchRepository';
 import './RepositoryDetails.scss';
 
-export interface RepositoryDetailsProps {
+interface RepositoryDetailsProps {
   repositoryDetails: any;
   dispatchHideRepositoryDetails?: any;
 }

@@ -3,12 +3,12 @@ import { Dispatch } from 'redux';
 import TextField from '../atoms/TextField';
 import './SearchTextField.scss';
 
-export interface SearchTextFieldProps {
+interface SearchTextFieldProps {
   dispatchUpdateSearchQuery?: (value: string) => Dispatch;
   dispatchHideRepositoryDetails?: () => Dispatch;
 }
 
-export interface SearchTextFieldState {
+interface SearchTextFieldState {
   inputValue: string,
 }
 

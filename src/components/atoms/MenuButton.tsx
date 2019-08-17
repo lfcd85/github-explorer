@@ -1,6 +1,6 @@
 import React, { MouseEvent } from 'react';
 
-export interface MenuButtonProps {
+interface MenuButtonProps {
   className?: string;
   label?: string;
   onClick?: (e: MouseEvent) => void;

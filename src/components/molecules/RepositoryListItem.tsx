@@ -3,7 +3,7 @@ import { Dispatch } from 'redux';
 import { SearchRepositoryResult } from '../../graphql/querySearchRepository';
 import './RepositoryListItem.scss';
 
-export interface RepositoryListItemProps {
+interface RepositoryListItemProps {
   repository: SearchRepositoryResult;
   dispatchShowRepositoryDetails?: (details: SearchRepositoryResult) => Dispatch;
 }

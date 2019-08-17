@@ -2,7 +2,7 @@ import React, { MouseEvent } from 'react';
 import MenuButton from '../atoms/MenuButton';
 import './PaginationButton.scss';
 
-export interface PaginationButtonProps {
+interface PaginationButtonProps {
   onClick?: (e: MouseEvent) => void;
   isNext: boolean;
   disabled: boolean;
