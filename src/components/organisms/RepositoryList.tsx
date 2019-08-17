@@ -3,7 +3,10 @@ import { useQuery } from '@apollo/react-hooks';
 import PaginationButton from '../molecules/PaginationButton';
 import RepositoryListItem from '../molecules/RepositoryListItemContainer';
 import { repositoriesPerPage } from '../../constants/SearchPage';
-import { querySearchRepository } from '../../graphql/querySearchRepository';
+import {
+  querySearchRepository,
+  querySearchRepositoryEdge,
+} from '../../graphql/querySearchRepository';
 import './RepositoryList.scss';
 
 export interface RepositoryListProps {
@@ -26,7 +29,7 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
   useEffect(() => {
     const { called, loading, data } = searchRepository;
     if (called && !loading && data) {
-      setRepositories(data.search.edges.map((item: any) => item.node));
+      setRepositories(data.search.edges.map((edge: querySearchRepositoryEdge) => edge.node));
       setPagination(data.search.pageInfo);
     }
   }, [searchRepository]);

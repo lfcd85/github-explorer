@@ -28,6 +28,10 @@ export interface querySearchRepositoryResult {
   url: string;
 }
 
+export interface querySearchRepositoryEdge {
+  node: querySearchRepositoryResult;
+}
+
 export const querySearchRepository = gql`
   query SearchRepository(
     $query: String!,
