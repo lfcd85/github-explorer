@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export interface querySearchRepositoryParams {
+export interface SearchRepositoryParams {
   query?: string;
   first?: number;
   after?: string;
@@ -8,18 +8,18 @@ export interface querySearchRepositoryParams {
   before?: string;
 }
 
-export interface queryLanguage {
+export interface Language {
   node: {
     name: string;
   };
 }
 
-export interface querySearchRepositoryResult {
+export interface SearchRepositoryResult {
   id: string;
   nameWithOwner: string;
   isArchived: boolean;
   languages?: {
-    edges: queryLanguage[];
+    edges: Language[];
   }
   description?: string;
   forkCount: number;
@@ -28,8 +28,8 @@ export interface querySearchRepositoryResult {
   url: string;
 }
 
-export interface querySearchRepositoryEdge {
-  node: querySearchRepositoryResult;
+export interface SearchRepositoryEdge {
+  node: SearchRepositoryResult;
 }
 
 export const querySearchRepository = gql`

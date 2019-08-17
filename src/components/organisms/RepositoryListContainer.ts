@@ -2,7 +2,7 @@ import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import RepositoryList from './RepositoryList';
 import { updatePagination } from '../../actions';
-import { querySearchRepositoryParams } from '../../graphql/querySearchRepository';
+import { SearchRepositoryParams } from '../../graphql/querySearchRepository';
 import { AllState } from '../../store';
 
 const mapStateToProps = (state: AllState) => ({
@@ -11,7 +11,7 @@ const mapStateToProps = (state: AllState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  dispatchUpdatePagination: (paginatedQuery: querySearchRepositoryParams) => (
+  dispatchUpdatePagination: (paginatedQuery: SearchRepositoryParams) => (
     dispatch(updatePagination(paginatedQuery))
   ),
 });

@@ -5,8 +5,8 @@ import RepositoryListItem from '../molecules/RepositoryListItemContainer';
 import { repositoriesPerPage } from '../../constants/SearchPage';
 import {
   querySearchRepository,
-  querySearchRepositoryEdge,
-  querySearchRepositoryResult,
+  SearchRepositoryEdge,
+  SearchRepositoryResult,
 } from '../../graphql/querySearchRepository';
 import './RepositoryList.scss';
 
@@ -30,7 +30,7 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
   useEffect(() => {
     const { called, loading, data } = searchRepository;
     if (called && !loading && data) {
-      setRepositories(data.search.edges.map((edge: querySearchRepositoryEdge) => edge.node));
+      setRepositories(data.search.edges.map((edge: SearchRepositoryEdge) => edge.node));
       setPagination(data.search.pageInfo);
     }
   }, [searchRepository]);
@@ -57,7 +57,7 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
   return (
     <>
       <div className='RepositoryList'>
-        {repositories.map((repository: querySearchRepositoryResult) =>
+        {repositories.map((repository: SearchRepositoryResult) =>
           <RepositoryListItem
             key={repository.id}
             repository={repository}

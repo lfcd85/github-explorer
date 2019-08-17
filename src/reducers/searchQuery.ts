@@ -1,6 +1,6 @@
 import actionTypes from '../actions/actionTypes';
 import { repositoriesPerPage } from '../constants/SearchPage';
-import { querySearchRepositoryParams } from '../graphql/querySearchRepository';
+import { SearchRepositoryParams } from '../graphql/querySearchRepository';
 
 const defaultState = {
   query: '',
@@ -10,11 +10,11 @@ const defaultState = {
 interface searchQueryAction {
   type: string;
   value?: string;
-  paginatedQuery?: querySearchRepositoryParams;
+  paginatedQuery?: SearchRepositoryParams;
 }
 
 const searchQuery = (
-  state: querySearchRepositoryParams = defaultState,
+  state: SearchRepositoryParams = defaultState,
   action: searchQueryAction
 ) => {
   switch (action.type) {

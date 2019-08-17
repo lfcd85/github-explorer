@@ -1,8 +1,8 @@
 import React from 'react';
 import BackToListButton from '../molecules/BackToListButton';
 import {
-  queryLanguage,
-  querySearchRepositoryResult,
+  Language,
+  SearchRepositoryResult,
 } from '../../graphql/querySearchRepository';
 import './RepositoryDetails.scss';
 
@@ -20,7 +20,7 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
 
   const extractDate = (dateTime: string) => new Date(dateTime).toDateString();
 
-  const renderTags = (details: querySearchRepositoryResult) => {
+  const renderTags = (details: SearchRepositoryResult) => {
     let tags = [];
 
     if (details.isArchived) {
@@ -32,7 +32,7 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
     }
 
     if (details.languages) {
-      const langNames = details.languages.edges.map((language: queryLanguage) => language.node.name);
+      const langNames = details.languages.edges.map((language: Language) => language.node.name);
       Array.prototype.push.apply(tags, langNames.map((langName: string) => (
         <span className='RepositoryDetails__languageTag' key={langName}>
           {langName}

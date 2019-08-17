@@ -1,13 +1,13 @@
 import actionTypes from '../actions/actionTypes';
-import { querySearchRepositoryResult } from '../graphql/querySearchRepository';
+import { SearchRepositoryResult } from '../graphql/querySearchRepository';
 
 interface repositoryDetailsAction {
   type: string;
-  details?: querySearchRepositoryResult;
+  details?: SearchRepositoryResult;
 }
 
 const repositoryDetails = (
-  details: querySearchRepositoryResult | {} = {},
+  details: SearchRepositoryResult | {} = {},
   action: repositoryDetailsAction
 ) => {
   switch (action.type) {
