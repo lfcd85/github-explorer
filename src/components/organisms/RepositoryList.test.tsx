@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import RepositoryList from './RepositoryList';
-import client from '../../apolloClient';
+import client from '../../graphql/apolloClient';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
