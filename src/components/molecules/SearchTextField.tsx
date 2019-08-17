@@ -13,12 +13,12 @@ interface SearchTextFieldState {
 }
 
 class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFieldState> {
-  constructor(props: SearchTextFieldProps) {
+  public constructor(props: SearchTextFieldProps) {
     super(props);
     this.state = { inputValue: '' };
   }
 
-  onChange = (e: SyntheticEvent<HTMLInputElement>) => {
+  private onChange = (e: SyntheticEvent<HTMLInputElement>) => {
     this.setState({ inputValue: e.currentTarget.value }, () => {
       if (this.state.inputValue.length > 0 && this.props.dispatchUpdateSearchQuery) {
         this.props.dispatchUpdateSearchQuery(this.state.inputValue);
@@ -29,7 +29,7 @@ class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFi
     });
   }
 
-  render() {
+  public render() {
     return (
       <TextField
         value={this.state.inputValue}
