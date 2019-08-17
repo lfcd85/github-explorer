@@ -13,7 +13,7 @@ const App: React.FC = () => {
         <div className="App">
           <SearchPage />
         </div>
-       </ApolloProvider>
+      </ApolloProvider>
     </Provider>
   );
 };

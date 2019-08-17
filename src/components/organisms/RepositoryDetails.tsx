@@ -9,8 +9,8 @@ import './RepositoryDetails.scss';
 // NOTE: sets `any` types to avoid the issue below about HOCs
 // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31363
 interface RepositoryDetailsProps {
-  repositoryDetails: any;
-  dispatchHideRepositoryDetails?: any;
+  repositoryDetails: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  dispatchHideRepositoryDetails?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {

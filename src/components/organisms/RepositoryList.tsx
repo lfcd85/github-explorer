@@ -13,8 +13,8 @@ import './RepositoryList.scss';
 // NOTE: sets `any` types to avoid the issue below about HOCs
 // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31363
 interface RepositoryListProps {
-  searchQuery?: any;
-  dispatchUpdatePagination?: any;
+  searchQuery?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
+  dispatchUpdatePagination?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 const RepositoryList: React.FC<RepositoryListProps> = (props) => {

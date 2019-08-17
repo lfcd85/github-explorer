@@ -9,7 +9,7 @@ interface SearchTextFieldProps {
 }
 
 interface SearchTextFieldState {
-  inputValue: string,
+  inputValue: string;
 }
 
 class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFieldState> {

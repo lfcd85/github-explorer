@@ -9,6 +9,6 @@ it('renders without crashing', () => {
     <App>
       <SearchPage />
     </App>
-   ), div);
+  ), div);
   ReactDOM.unmountComponentAtNode(div);
 });

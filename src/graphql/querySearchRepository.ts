@@ -20,7 +20,7 @@ export interface SearchRepositoryResult {
   isArchived: boolean;
   languages?: {
     edges: Language[];
-  }
+  };
   description?: string;
   forkCount: number;
   createdAt: string;
