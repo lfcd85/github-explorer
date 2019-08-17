@@ -10,6 +10,8 @@ import {
 } from '../../graphql/querySearchRepository';
 import './RepositoryList.scss';
 
+// NOTE: sets `any` types to avoid the issue below about HOCs
+// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31363
 interface RepositoryListProps {
   searchQuery?: any;
   dispatchUpdatePagination?: any;
@@ -39,13 +41,13 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
     const { query } = props.searchQuery;
     const { endCursor, startCursor } = searchRepository.data.search.pageInfo;
 
-    if (isNext) {
+    if (isNext && props.dispatchUpdatePagination) {
       props.dispatchUpdatePagination({
         query,
         first: repositoriesPerPage,
         after: endCursor,
       });
-    } else {
+    } else if (props.dispatchUpdatePagination) {
       props.dispatchUpdatePagination({
         query,
         last: repositoriesPerPage,

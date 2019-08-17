@@ -6,6 +6,8 @@ import {
 } from '../../graphql/querySearchRepository';
 import './RepositoryDetails.scss';
 
+// NOTE: sets `any` types to avoid the issue below about HOCs
+// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/31363
 interface RepositoryDetailsProps {
   repositoryDetails: any;
   dispatchHideRepositoryDetails?: any;
@@ -15,7 +17,9 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
   const details = props.repositoryDetails;
 
   const hideDetails = () => {
-    props.dispatchHideRepositoryDetails();
+    if (props.dispatchHideRepositoryDetails) {
+      props.dispatchHideRepositoryDetails();
+    }
   }
 
   const extractDate = (dateTime: string) => new Date(dateTime).toDateString();
