@@ -1,11 +1,12 @@
 import actionTypes from './actionTypes';
+import { querySearchRepositoryParams } from '../graphql/querySearchRepository';
 
 export const updateSearchQuery = (value: string) => ({
   type: actionTypes.UPDATE_SEARCH_QUERY,
   value
 });
 
-export const updatePagination = (paginatedQuery: any) => ({
+export const updatePagination = (paginatedQuery: querySearchRepositoryParams) => ({
   type: actionTypes.UPDATE_PAGINATION,
   paginatedQuery
 });

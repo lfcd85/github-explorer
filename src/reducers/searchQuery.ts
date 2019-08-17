@@ -1,12 +1,22 @@
 import actionTypes from '../actions/actionTypes';
 import { repositoriesPerPage } from '../constants/SearchPage';
+import { querySearchRepositoryParams } from '../graphql/querySearchRepository';
 
 const defaultState = {
   query: '',
   first: repositoriesPerPage,
 };
 
-const searchQuery = (state = defaultState, action: any) => {
+interface searchQueryAction {
+  type: string;
+  value?: string;
+  paginatedQuery?: querySearchRepositoryParams;
+}
+
+const searchQuery = (
+  state: querySearchRepositoryParams = defaultState,
+  action: searchQueryAction
+) => {
   switch (action.type) {
     case actionTypes.UPDATE_SEARCH_QUERY:
       return {

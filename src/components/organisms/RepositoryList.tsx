@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/react-hooks';
 import PaginationButton from '../molecules/PaginationButton';
 import RepositoryListItem from '../molecules/RepositoryListItemContainer';
 import { repositoriesPerPage } from '../../constants/SearchPage';
-import querySearchRepository from '../../graphql/querySearchRepository';
+import { querySearchRepository } from '../../graphql/querySearchRepository';
 import './RepositoryList.scss';
 
 export interface RepositoryListProps {

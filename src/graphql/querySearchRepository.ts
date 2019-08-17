@@ -1,6 +1,14 @@
 import gql from 'graphql-tag';
 
-const querySearchRepository = gql`
+export interface querySearchRepositoryParams {
+  query?: string;
+  first?: number;
+  after?: string;
+  last?: number;
+  before?: string;
+}
+
+export const querySearchRepository = gql`
   query SearchRepository(
     $query: String!,
     $first: Int,
@@ -46,5 +54,3 @@ const querySearchRepository = gql`
     }
   }
 `;
-
-export default querySearchRepository;
