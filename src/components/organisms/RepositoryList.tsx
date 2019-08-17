@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, MouseEvent } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import PaginationButton from '../molecules/PaginationButton';
 import RepositoryListItem from '../molecules/RepositoryListItemContainer';
@@ -31,7 +31,7 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
     }
   }, [searchRepository]);
 
-  const updatePagination = (e: any, isNext: boolean) => {
+  const updatePagination = (e: MouseEvent, isNext: boolean) => {
     const { query } = props.searchQuery;
     const { endCursor, startCursor } = searchRepository.data.search.pageInfo;
 
@@ -65,12 +65,12 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
           <PaginationButton
             isNext={false}
             disabled={!pagination.hasPreviousPage}
-            onClick={(e: any) => updatePagination(e, false)}
+            onClick={(e: MouseEvent) => updatePagination(e, false)}
           />
           <PaginationButton
             isNext
             disabled={!pagination.hasNextPage}
-            onClick={(e: any) => updatePagination(e, true)}
+            onClick={(e: MouseEvent) => updatePagination(e, true)}
           />
         </div>
       }

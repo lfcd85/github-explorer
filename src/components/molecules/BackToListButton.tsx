@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 import MenuButton from '../atoms/MenuButton';
 import './BackToListButton.scss';
 
-const BackToListButton: React.FC<{ onClick?: any }> = (props) => {
+const BackToListButton: React.FC<{ onClick?: (e: MouseEvent) => void }> = (props) => {
   return (
     <MenuButton
       className='BackToListButton'
