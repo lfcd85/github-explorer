@@ -10,6 +10,6 @@ const BackToListButton: React.FC<{ onClick?: (e: MouseEvent) => void }> = (props
       onClick={props.onClick}
     />
   );
-}
+};
 
 export default BackToListButton;

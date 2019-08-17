@@ -54,7 +54,7 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
         before: startCursor,
       });
     }
-  }
+  };
 
   return (
     <>
@@ -82,6 +82,6 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
       }
     </>
   );
-}
+};
 
 export default RepositoryList;

@@ -8,6 +8,6 @@ const SearchWindow: React.FC = () => {
       <SearchTextField />
     </section>
   );
-}
+};
 
 export default SearchWindow;

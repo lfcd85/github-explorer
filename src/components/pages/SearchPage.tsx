@@ -16,6 +16,6 @@ const SearchPage: React.FC<{ repositoryDetails?: SearchRepositoryResult | {} }> 
       {isRepositorySelected ? <RepositoryDetails /> : <RepositoryList />}
     </>
   );
-}
+};
 
 export default SearchPage;

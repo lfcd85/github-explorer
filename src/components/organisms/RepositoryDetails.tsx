@@ -20,7 +20,7 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
     if (props.dispatchHideRepositoryDetails) {
       props.dispatchHideRepositoryDetails();
     }
-  }
+  };
 
   const extractDate = (dateTime: string) => new Date(dateTime).toDateString();
 
@@ -49,7 +49,7 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
         {tags}
       </div>
     );
-  }
+  };
 
   return (
     <>
@@ -83,6 +83,6 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
       <BackToListButton onClick={hideDetails} />
     </>
   );
-}
+};
 
 export default RepositoryDetails;

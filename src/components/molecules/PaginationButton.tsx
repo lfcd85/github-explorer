@@ -17,6 +17,6 @@ const PaginationButton: React.FC<PaginationButtonProps> = (props) => {
       label={props.isNext ? '>' : '<'}
     />
   );
-}
+};
 
 export default PaginationButton;

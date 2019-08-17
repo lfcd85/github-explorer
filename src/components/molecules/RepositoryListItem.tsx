@@ -27,6 +27,6 @@ const RepositoryListItem: React.FC<RepositoryListItemProps> = (props) => {
       }
     </div>
   );
-}
+};
 
 export default RepositoryListItem;
