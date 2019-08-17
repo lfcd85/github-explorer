@@ -1,3 +1,4 @@
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import RepositoryListItem from './RepositoryListItem';
 import { showRepositoryDetails } from '../../actions';
@@ -7,7 +8,7 @@ function mapStateToProps() {
   return Object.assign({});
 }
 
-const mapDispatchToProps = (dispatch: any) => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   dispatchShowRepositoryDetails: (details: querySearchRepositoryResult) => (
     dispatch(showRepositoryDetails(details))
   ),

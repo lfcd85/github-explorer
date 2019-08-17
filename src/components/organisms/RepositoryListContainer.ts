@@ -1,3 +1,4 @@
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import RepositoryList from './RepositoryList';
 import { updatePagination } from '../../actions';
@@ -8,7 +9,7 @@ const mapStateToProps = (state: any) => ({
   repositoryDetails: state.repositoryDetails,
 });
 
-const mapDispatchToProps = (dispatch: any) => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   dispatchUpdatePagination: (paginatedQuery: querySearchRepositoryParams) => (
     dispatch(updatePagination(paginatedQuery))
   ),
