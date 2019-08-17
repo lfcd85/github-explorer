@@ -2,8 +2,9 @@ import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import RepositoryDetails from './RepositoryDetails';
 import { hideRepositoryDetails } from '../../actions';
+import { AllState } from '../../store';
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: AllState) => ({
   repositoryDetails: state.repositoryDetails,
 });
 

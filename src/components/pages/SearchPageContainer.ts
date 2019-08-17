@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import SearchPage from './SearchPage';
+import { AllState } from '../../store';
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: AllState) => ({
   repositoryDetails: state.repositoryDetails,
 });
 

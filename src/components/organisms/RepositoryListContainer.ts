@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import RepositoryList from './RepositoryList';
 import { updatePagination } from '../../actions';
 import { querySearchRepositoryParams } from '../../graphql/querySearchRepository';
+import { AllState } from '../../store';
 
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: AllState) => ({
   searchQuery: state.searchQuery,
   repositoryDetails: state.repositoryDetails,
 });
