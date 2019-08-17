@@ -4,7 +4,7 @@ import { querySearchRepositoryResult } from '../../graphql/querySearchRepository
 import './RepositoryListItem.scss';
 
 export interface RepositoryListItemProps {
-  repository: any;
+  repository: querySearchRepositoryResult;
   dispatchShowRepositoryDetails?: (details: querySearchRepositoryResult) => Dispatch;
 }
 

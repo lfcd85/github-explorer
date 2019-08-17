@@ -6,6 +6,7 @@ import { repositoriesPerPage } from '../../constants/SearchPage';
 import {
   querySearchRepository,
   querySearchRepositoryEdge,
+  querySearchRepositoryResult,
 } from '../../graphql/querySearchRepository';
 import './RepositoryList.scss';
 
@@ -56,7 +57,7 @@ const RepositoryList: React.FC<RepositoryListProps> = (props) => {
   return (
     <>
       <div className='RepositoryList'>
-        {repositories.map((repository: any) =>
+        {repositories.map((repository: querySearchRepositoryResult) =>
           <RepositoryListItem
             key={repository.id}
             repository={repository}

@@ -13,7 +13,7 @@ export interface SearchTextFieldState {
 }
 
 class SearchTextField extends React.Component<SearchTextFieldProps, SearchTextFieldState> {
-  constructor(props: any) {
+  constructor(props: SearchTextFieldProps) {
     super(props);
     this.state = { inputValue: '' };
   }

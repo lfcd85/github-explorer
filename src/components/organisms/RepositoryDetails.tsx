@@ -2,6 +2,7 @@ import React from 'react';
 import BackToListButton from '../molecules/BackToListButton';
 import {
   queryLanguage,
+  querySearchRepositoryResult,
 } from '../../graphql/querySearchRepository';
 import './RepositoryDetails.scss';
 
@@ -19,7 +20,7 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
 
   const extractDate = (dateTime: string) => new Date(dateTime).toDateString();
 
-  const renderTags = (details: any) => {
+  const renderTags = (details: querySearchRepositoryResult) => {
     let tags = [];
 
     if (details.isArchived) {
