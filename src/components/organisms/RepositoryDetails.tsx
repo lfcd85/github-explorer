@@ -27,12 +27,14 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = (props) => {
       );
     }
 
-    const langNames = details.languages.edges.map((language: any) => language.node.name);
-    Array.prototype.push.apply(tags, langNames.map((langName: string) => (
-      <span className='RepositoryDetails__languageTag' key={langName}>
-        {langName}
-      </span>
-    )));
+    if (details.languages) {
+      const langNames = details.languages.edges.map((language: any) => language.node.name);
+      Array.prototype.push.apply(tags, langNames.map((langName: string) => (
+        <span className='RepositoryDetails__languageTag' key={langName}>
+          {langName}
+        </span>
+      )));
+    }
 
     return (tags.length === 0) ? '' : (
       <div className='RepositoryDetails__tagsWrapper'>

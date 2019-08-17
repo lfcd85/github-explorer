@@ -8,6 +8,24 @@ export interface querySearchRepositoryParams {
   before?: string;
 }
 
+export interface querySearchRepositoryResult {
+  id: string;
+  nameWithOwner: string;
+  isArchived: boolean;
+  languages?: {
+    edges: Array<{
+      node: {
+        name: string;
+      }
+    }>
+  };
+  description?: string;
+  forkCount: number;
+  createdAt: string;
+  updatedAt: string;
+  url: string;
+}
+
 export const querySearchRepository = gql`
   query SearchRepository(
     $query: String!,

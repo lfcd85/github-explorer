@@ -1,5 +1,8 @@
 import actionTypes from './actionTypes';
-import { querySearchRepositoryParams } from '../graphql/querySearchRepository';
+import {
+  querySearchRepositoryParams,
+  querySearchRepositoryResult,
+} from '../graphql/querySearchRepository';
 
 export const updateSearchQuery = (value: string) => ({
   type: actionTypes.UPDATE_SEARCH_QUERY,
@@ -11,7 +14,7 @@ export const updatePagination = (paginatedQuery: querySearchRepositoryParams) =>
   paginatedQuery
 });
 
-export const showRepositoryDetails = (details: any) => ({
+export const showRepositoryDetails = (details: querySearchRepositoryResult) => ({
   type: actionTypes.SHOW_REPOSITORY_DETAILS,
   details
 });

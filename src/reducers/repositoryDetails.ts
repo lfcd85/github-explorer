@@ -1,6 +1,15 @@
 import actionTypes from '../actions/actionTypes';
+import { querySearchRepositoryResult } from '../graphql/querySearchRepository';
 
-const repositoryDetails = (details = {}, action: any) => {
+interface repositoryDetailsAction {
+  type: string;
+  details?: querySearchRepositoryResult;
+}
+
+const repositoryDetails = (
+  details: querySearchRepositoryResult | {} = {},
+  action: repositoryDetailsAction
+) => {
   switch (action.type) {
     case actionTypes.SHOW_REPOSITORY_DETAILS:
       return action.details;
