@@ -9,10 +9,12 @@
   height: 44px;
   font-size: 14px;
   font-weight: 700;
+  transition: 0.2s;
 
   &:not([disabled]):hover {
     background-color: var(--appFaintGray);
     cursor: pointer;
+    transition: 0.2s;
   }
 
   &:disabled {

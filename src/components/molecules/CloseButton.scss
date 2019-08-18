@@ -6,6 +6,12 @@
   border-radius: 10px;
   flex-shrink: 0;
   cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: var(--appGray);
+    transition: 0.2s;
+  }
 
   &:before,
   &:after {
