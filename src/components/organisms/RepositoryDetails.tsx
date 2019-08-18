@@ -56,7 +56,7 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = props => {
     <>
       <section className="RepositoryDetails">
         <div className="RepositoryDetails__topRow">
-          <h3 className="RepositoryDetails__nameWithOwner">{details.nameWithOwner}</h3>
+          <h2 className="RepositoryDetails__nameWithOwner">{details.nameWithOwner}</h2>
           <CloseButton onClick={hideDetails} />
         </div>
         {renderTags(details)}
