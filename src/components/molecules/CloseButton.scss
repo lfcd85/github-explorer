@@ -1,0 +1,28 @@
+.CloseButton {
+  position: relative;
+  background: var(--appLightGray);
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    background: var(--appWhite);
+    top: calc(50% - 10% / 2);
+    left: calc(50% - 60% / 2);
+    width: 60%;
+    height: 10%;
+  }
+
+  &:before {
+    transform: rotate(-45deg);
+  }
+
+  &:after {
+    transform: rotate(45deg);
+  }
+}

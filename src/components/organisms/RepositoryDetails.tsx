@@ -1,4 +1,5 @@
 import React from 'react';
+import CloseButton from '../molecules/CloseButton';
 import BackToListButton from '../molecules/BackToListButton';
 import {
   Language,
@@ -54,7 +55,10 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = props => {
   return (
     <>
       <div className="RepositoryDetails">
-        <h3 className="RepositoryDetails__nameWithOwner">{details.nameWithOwner}</h3>
+        <div className="RepositoryDetails__topRow">
+          <h3 className="RepositoryDetails__nameWithOwner">{details.nameWithOwner}</h3>
+          <CloseButton onClick={hideDetails} />
+        </div>
         {renderTags(details)}
         <dl>
           {details.description && (
