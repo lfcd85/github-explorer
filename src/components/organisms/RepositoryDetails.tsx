@@ -54,7 +54,7 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = props => {
 
   return (
     <>
-      <div className="RepositoryDetails">
+      <section className="RepositoryDetails">
         <div className="RepositoryDetails__topRow">
           <h3 className="RepositoryDetails__nameWithOwner">{details.nameWithOwner}</h3>
           <CloseButton onClick={hideDetails} />
@@ -83,7 +83,7 @@ const RepositoryDetails: React.FC<RepositoryDetailsProps> = props => {
             </a>
           </dd>
         </dl>
-      </div>
+      </section>
       <BackToListButton onClick={hideDetails} />
     </>
   );
