@@ -1,4 +1,5 @@
 .PaginationButton {
+  position: relative;
   color: var(--appBlack);
   background: var(--appWhite);
   box-shadow: 0 1px 6px 0 rgba(36, 36, 36, .36);
@@ -8,13 +9,64 @@
   height: 44px;
   font-size: 14px;
   font-weight: 700;
+  transition: 0.2s;
 
   &:not([disabled]):hover {
     background-color: var(--appFaintGray);
     cursor: pointer;
+    transition: 0.2s;
   }
 
   &:disabled {
     opacity: 0.4;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: '';
+    background: var(--appGray);
+    top: 50%;
+    width: 30%;
+    height: 3px;
+    border-radius: 1.5px;
+  }
+
+  &:before {
+    margin: -11% 0 0 -15%;
+  }
+
+  &:after {
+    margin: 7% 0 0 -15%;
+  }
+
+  &--isNext {
+    &:before,
+    &:after {
+      left: 52%;
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &--isPrevious {
+    &:before,
+    &:after {
+      left: 48%;
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      transform: rotate(45deg);
+    }
   }
 }

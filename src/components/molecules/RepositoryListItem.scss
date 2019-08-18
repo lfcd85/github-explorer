@@ -2,10 +2,14 @@
   box-sizing: border-box;
   border-bottom: solid 1px var(--appLightGray);
   padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
 
   &:hover {
     background-color: var(--appFaintGray);
     cursor: pointer;
+    transition: 0.2s;
   }
 
   &:first-child {
@@ -14,8 +18,14 @@
   }
 
   &:last-child {
+    border: none;
     padding: 12px 16px 16px;
     border-radius: 0 0 22px 22px;
+  }
+
+  &__main {
+    flex-grow: 1;
+    max-width: calc(100% - 20px);
   }
 
   &__nameWithOwner {

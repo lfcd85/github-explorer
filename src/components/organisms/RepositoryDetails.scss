@@ -7,10 +7,15 @@
   border-radius: 22px;
   padding: 16px 16px 20px;
 
+  &__topRow {
+    display: flex;
+  }
+
   &__nameWithOwner {
     color: var(--appBlack);
     font-size: 18px;
     font-weight: 600;
+    flex-grow: 1;
   }
 
   &__tagsWrapper {

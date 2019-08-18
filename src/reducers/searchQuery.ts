@@ -2,7 +2,7 @@ import actionTypes from '../actions/actionTypes';
 import { repositoriesPerPage } from '../constants/SearchPage';
 import { SearchRepositoryParams } from '../graphql/querySearchRepository';
 
-const defaultState = {
+export const defaultState = {
   query: '',
   first: repositoriesPerPage,
 };

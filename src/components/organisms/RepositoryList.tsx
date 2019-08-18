@@ -1,5 +1,6 @@
 import React, { useState, useEffect, MouseEvent } from 'react';
 import { useQuery } from '@apollo/react-hooks';
+import { animateScroll } from 'react-scroll';
 import PaginationButton from '../molecules/PaginationButton';
 import RepositoryListItem from '../molecules/RepositoryListItemContainer';
 import { repositoriesPerPage } from '../../constants/SearchPage';
@@ -46,18 +47,32 @@ const RepositoryList: React.FC<RepositoryListProps> = props => {
         first: repositoriesPerPage,
         after: endCursor,
       });
+      animateScroll.scrollToTop({ duration: 500 });
     } else if (props.dispatchUpdatePagination) {
       props.dispatchUpdatePagination({
         query,
         last: repositoriesPerPage,
         before: startCursor,
       });
+      animateScroll.scrollToTop({ duration: 500 });
     }
   };
+
+  const { loading, data } = searchRepository;
+  const queryExists = props.searchQuery.query !== '';
+
+  const isSearching = queryExists && loading;
+  const isNotFound = queryExists && !loading && data.search.edges.length === 0;
 
   return (
     <>
       <div className="RepositoryList">
+        {isSearching && (
+          <div className="RepositoryList__isSearching">Searching...</div>
+        )}
+        {isNotFound && (
+          <div className="RepositoryList__isNotFound">Repository Not Found.</div>
+        )}
         {repositories.map((repository: SearchRepositoryResult, index: number) => (
           <RepositoryListItem
             key={repository.id}

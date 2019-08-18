@@ -1,11 +1,9 @@
 @import './styles/colors.scss';
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import './styles/fonts.scss';
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--defaultFont);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   word-break: break-word;
@@ -29,5 +27,7 @@ h1, h3, p, dl, dt, dd {
 }
 
 button {
+  margin: 0;
+  padding: 0;
   border: none;
 }
