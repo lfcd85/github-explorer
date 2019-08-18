@@ -12,10 +12,11 @@
     position: absolute;
     content: '';
     background: var(--appWhite);
-    top: calc(50% - 10% / 2);
+    top: calc(50% - 1.5px / 2);
     left: calc(50% - 60% / 2);
     width: 60%;
-    height: 10%;
+    height: 1.5px;
+    border-radius: 0.8px;
   }
 
   &:before {
