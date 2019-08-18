@@ -1,5 +1,6 @@
 import React, { useState, useEffect, MouseEvent } from 'react';
 import { useQuery } from '@apollo/react-hooks';
+import { animateScroll } from 'react-scroll';
 import PaginationButton from '../molecules/PaginationButton';
 import RepositoryListItem from '../molecules/RepositoryListItemContainer';
 import { repositoriesPerPage } from '../../constants/SearchPage';
@@ -46,12 +47,14 @@ const RepositoryList: React.FC<RepositoryListProps> = props => {
         first: repositoriesPerPage,
         after: endCursor,
       });
+      animateScroll.scrollToTop({ duration: 500 });
     } else if (props.dispatchUpdatePagination) {
       props.dispatchUpdatePagination({
         query,
         last: repositoriesPerPage,
         before: startCursor,
       });
+      animateScroll.scrollToTop({ duration: 500 });
     }
   };
 
