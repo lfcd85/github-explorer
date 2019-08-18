@@ -8,7 +8,7 @@ GitHub 上のリポジトリを検索して、検索結果を一覧表示する 
 - 検索ワードの入力と同時に検索が走ります（インクリメンタルサーチ）
 - リポジトリをタップ／クリックすると、リポジトリの詳細画面に遷移します
 - React, Redux を使用しています
-  - その他の使用技術: TypeScript, GraphQL (Apollo Client), Jest
+  - その他の使用技術: TypeScript, GraphQL (Apollo Client), Jest 等を使用しました
   - セットアップには [Create React App](https://github.com/facebook/create-react-app) を利用しました
   - Webpack や Babel 等の設定は、Create React App 標準のものを利用しています
 
