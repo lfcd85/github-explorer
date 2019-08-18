@@ -13,4 +13,25 @@
     width: 540px;
     padding: 24px 0 0;
   }
+
+  &__isSearching,
+  &__isNotFound {
+    padding: 16px 16px 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &__isSearching {
+    animation: blink 0.5s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

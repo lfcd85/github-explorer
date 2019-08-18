@@ -58,9 +58,21 @@ const RepositoryList: React.FC<RepositoryListProps> = props => {
     }
   };
 
+  const { loading, data } = searchRepository;
+  const queryExists = props.searchQuery.query !== '';
+
+  const isSearching = queryExists && loading;
+  const isNotFound = queryExists && !loading && data.search.edges.length === 0;
+
   return (
     <>
       <div className="RepositoryList">
+        {isSearching && (
+          <div className="RepositoryList__isSearching">Searching...</div>
+        )}
+        {isNotFound && (
+          <div className="RepositoryList__isNotFound">Repository Not Found.</div>
+        )}
         {repositories.map((repository: SearchRepositoryResult, index: number) => (
           <RepositoryListItem
             key={repository.id}
