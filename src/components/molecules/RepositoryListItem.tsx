@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dispatch } from 'redux';
+import RightArrowButton from './RightArrowButton';
 import { SearchRepositoryResult } from '../../graphql/querySearchRepository';
 import './RepositoryListItem.scss';
 
@@ -24,14 +25,17 @@ const RepositoryListItem: React.FC<RepositoryListItemProps> = props => {
       role="link"
       tabIndex={props.tabIndex}
     >
-      <div className="RepositoryListItem__nameWithOwner">
-        {props.repository.nameWithOwner}
-      </div>
-      {props.repository.description && (
-        <div className="RepositoryListItem__description">
-          {props.repository.description}
+      <div className="RepositoryListItem__main">
+        <div className="RepositoryListItem__nameWithOwner">
+          {props.repository.nameWithOwner}
         </div>
-      )}
+        {props.repository.description && (
+          <div className="RepositoryListItem__description">
+            {props.repository.description}
+          </div>
+        )}
+      </div>
+      <RightArrowButton />
     </div>
   );
 };
