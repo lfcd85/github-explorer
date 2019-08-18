@@ -66,7 +66,7 @@ const RepositoryList: React.FC<RepositoryListProps> = props => {
 
   return (
     <>
-      <div className="RepositoryList">
+      <section className="RepositoryList">
         {isSearching && (
           <div className="RepositoryList__isSearching">Searching...</div>
         )}
@@ -80,7 +80,7 @@ const RepositoryList: React.FC<RepositoryListProps> = props => {
             tabIndex={index + 1}
           />
         ))}
-      </div>
+      </section>
       {repositories.length > 0 && (
         <div className="RepositoryList__paginationButtonsWrapper">
           <PaginationButton
