@@ -1,3 +1,5 @@
+@import '../../styles/breakpoints.scss';
+
 .RepositoryListItem {
   box-sizing: border-box;
   border-bottom: solid 1px var(--appLightGray);
@@ -5,6 +7,10 @@
   display: flex;
   align-items: center;
   transition: 0.2s;
+
+  @media (--isPC) {
+    padding: 16px 20px;
+  }
 
   &:hover {
     background-color: var(--appFaintGray);
@@ -15,12 +21,20 @@
   &:first-child {
     padding: 16px 16px 12px;
     border-radius: 22px 22px 0 0;
+
+    @media (--isPC) {
+      padding: 20px 20px 16px;
+    }
   }
 
   &:last-child {
     border: none;
     padding: 12px 16px 16px;
     border-radius: 0 0 22px 22px;
+
+    @media (--isPC) {
+      padding: 16px 20px 20px;
+    }
   }
 
   &__main {
@@ -32,6 +46,10 @@
     color: var(--appBlack);
     font-size: 18px;
     font-weight: 600;
+
+    @media (--isPC) {
+      font-size: 22px;
+    }
   }
 
   &__description {
@@ -41,5 +59,9 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+
+    @media (--isPC) {
+      font-size: 16px;
+    }
   }
 }
