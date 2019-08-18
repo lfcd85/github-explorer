@@ -21,6 +21,7 @@ Run `cp .env.example .env` , then you can add your API token to the generated `.
 
 ### Configure the version of Node.js
 
+The Node.js version used the development is `v10.16.2` .<br>
 If nvm (Node Version Manager) is already installed, you can switch the version of Node.js to `v10.16.2` by the following command:
 
 ```
@@ -34,3 +35,12 @@ nvm use
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### `yarn test` (or `npm test` )  
+
+Launches the test using Jest and Enzyme.<br>
+At present, the test mainly checks whether each component is rendered without crashing.
+
+### `yarn build` (or `npm run build` )
+
+Builds the app for production to the `build` folder.
